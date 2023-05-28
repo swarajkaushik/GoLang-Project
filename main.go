@@ -3,11 +3,18 @@ package main
 import (
 	routes "github.com/swarajkaushik/GoLang-Project/routes"
 	"os"
+	"log"
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
 )
 
 func main() {
-	port = os.Getenv("PORT")
+	err := godotenv.Load(".env")
+
+	if err != nil {
+		log.Fetal("Error loding .env file")
+	}
+	port := os.Getenv("PORT")
 
 	if port="" {
 		port="8000"
