@@ -1,7 +1,7 @@
 package main
 
 import (
-	routes "GoLang-Project/routes"
+	routes "github.com/swarajkaushik/GoLang-Project/routes"
 	"os"
 	"github.com/gin-gonic/gin"
 )

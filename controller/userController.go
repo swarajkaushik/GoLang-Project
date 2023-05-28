@@ -180,7 +180,9 @@ var allusers []bson.M
 if err = result.All(ctx, &allusers); err!=nil{
 	log.Fatal(err)
 }
-c.JSON(http.StatusOK, allusers[0])}}
+c.JSON(http.StatusOK, allusers[0])}
+
+}
 
 func GetUser() gin.HandlerFunc{
 	return func(c *gin.Context){
