@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 	"time"
-	"github.com/swarajkaushik/GoLang-Project/helpers"
+	"github.com/swarajkaushik/GoLang-Project/database"
 	jwt "github.com/dgrijalva/jwt-go"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"

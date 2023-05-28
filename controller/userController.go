@@ -1,22 +1,22 @@
-package controllers 
+package controllers
 
 import(
-"context"
-"fmt"
-"log"
-"strconv"
-"net/http"
-"time"
-"github.com/gin-gonic/gin"
-"github.com/go-playground/validator/v10"
-helper "github.com/swarajkaushik/GoLang-Project/helpers"
-"github.com/swarajkaushik/GoLang-Project/models"
-"github.com/swarajkaushik/GoLang-Project/database"
-"golang.org/x/crypto/bcrypt"
-
-"go.mongodb.org/mongo-driver/bson"
-"go.mongodb.org/mongo-driver/bson/primitive"
-"go.mongodb.org/mongo-driver/mongo"
+	"context"
+	"fmt"
+	"log"
+	"strconv"
+	"net/http"
+	"time"
+	"github.com/gin-gonic/gin"
+	"github.com/go-playground/validator/v10"
+	helper "github.com/swarajkaushik/GoLang-Project/helpers"
+	"github.com/swarajkaushik/GoLang-Project/models"
+	"github.com/swarajkaushik/GoLang-Project/database"
+	"golang.org/x/crypto/bcrypt"
+	
+	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/bson/primitive"
+	"go.mongodb.org/mongo-driver/mongo"
 )
 
 var userCollection *mongo.Collection = database.OpenCollection(database.Client, "user")
