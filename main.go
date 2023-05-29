@@ -8,15 +8,15 @@ import (
 	"github.com/joho/godotenv"
 )
 
-func main() {
+func main(){
 	err := godotenv.Load(".env")
 
 	if err != nil {
-		log.Fetal("Error loding .env file")
+		log.Fatal("Error loading .env file")
 	}
 	port := os.Getenv("PORT")
 
-	if port="" {
+	if port==""{
 		port="8000"
 	}
 
@@ -26,12 +26,12 @@ func main() {
 	routes.AuthRoutes(router)
 	routes.UserRoutes(router)
 
-	router.Get("/api-1", func(c *gin.Context){
-		c.JSON(200, gin.H{"success": "Access franted for api-1"})
+	router.GET("/api-1", func(c *gin.Context){
+		c.JSON(200, gin.H{"success":"Access granted for api-1"})
 	})
 
-	router.GET("/api-1", func(c *gin.Context){
-		c.JSON(200, gin.h{"success": "Access granted for api-2"})
+	router.GET("/api-2", func(c *gin.Context){
+		c.JSON(200, gin.H{"success":"Access granted for api-2"})
 	})
 
 	router.Run(":" + port)
